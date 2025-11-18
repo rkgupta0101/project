@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-page-bg text-white antialiased;
+}
+
+main {
+  @apply min-h-screen;
+}
