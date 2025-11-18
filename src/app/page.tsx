@@ -234,12 +234,12 @@ function HeroCategory({
       <div className="relative flex flex-col md:flex-row items-center justify-center gap-12 md:gap-0">
         <div className="relative w-full md:w-auto flex items-center justify-start md:justify-start md:flex-1 md:pl-16">
           <div className="relative h-[28rem] w-[28rem] md:h-[34rem] md:w-[34rem] lg:h-[38rem] lg:w-[38rem]">
-            {/* Gradient border arch (inverted U) */}
-            <div className="absolute inset-0 rounded-t-full bg-gradient-to-br from-[#F9627D] via-[#E8447C] to-[#FF9A5A] p-[8px]">
-              <div className="w-full h-full rounded-t-full bg-[#1a1420]" />
+            {/* Gradient border circle */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#F9627D] via-[#E8447C] to-[#FF9A5A] p-[8px]">
+              <div className="w-full h-full rounded-full bg-[#1a1420]" />
             </div>
-            {/* Image inside arch with dark overlay */}
-            <div className="absolute inset-[8px] rounded-t-full overflow-hidden">
+            {/* Image inside circle with dark overlay */}
+            <div className="absolute inset-[8px] rounded-full overflow-hidden">
               <Image
                 src={category.imageSrc}
                 alt={category.label}
@@ -249,8 +249,8 @@ function HeroCategory({
               />
             </div>
 
-            {/* Rotating arrow on arch */}
-            <div className="absolute -right-6 bottom-16 md:-right-8 md:bottom-20 text-[#FF9A5A] text-3xl md:text-4xl">
+            {/* Rotating arrow on circle */}
+            <div className="absolute -right-6 top-1/2 -translate-y-1/2 md:-right-8 text-[#FF9A5A] text-3xl md:text-4xl">
               ↻
             </div>
           </div>
