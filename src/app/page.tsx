@@ -7,6 +7,7 @@ import { CultureSlider } from "@/components/CultureSlider";
 import { SquadSection } from "@/components/SquadSection";
 import { RecentShows } from "@/components/RecentShows";
 import { TalentedFolksCTA } from "@/components/TalentedFolksCTA";
+import TalentedTeamHero from "@/components/TalentedTeamHero";
 import {
   SHARED_IMAGES,
   CATEGORIES,
@@ -78,16 +79,17 @@ export default function Page() {
             SHARED_IMAGES[2],
             SHARED_IMAGES[1],
           ]}
+          allSquads={SQUADS}
         />
 
         <RecentShows
           current={currentShow}
           onPrev={handlePrevShow}
           onNext={handleNextShow}
-          imageSrc={SHARED_IMAGES[0]}
+          imageSrc={currentShow.imageSrc}
         />
 
-        <TalentedFolksCTA />
+        <TalentedTeamHero />
       </div>
     </main>
   );

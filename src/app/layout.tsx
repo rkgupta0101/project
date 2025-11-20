@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { Caveat } from "next/font/google";
 import "./globals.css";
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "StarClinch Experience",
@@ -13,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-page-bg text-white">
+      <body className={`bg-page-bg text-white ${caveat.variable}`}>
         {children}
       </body>
     </html>

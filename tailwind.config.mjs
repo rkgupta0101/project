@@ -21,6 +21,7 @@ export default {
           "Segoe UI",
           "sans-serif",
         ],
+        caveat: ["var(--font-caveat)", "cursive"],
       },
       boxShadow: {
         "soft-glow": "0 0 80px rgba(249, 98, 125, 0.25)",

@@ -14,3 +14,29 @@ body {
 main {
   @apply min-h-screen;
 }
+
+@keyframes rotate-clock-needle {
+  from {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+.animate-rotate-clock-needle {
+  animation: rotate-clock-needle 0.6s ease-in-out forwards;
+}
+
+@keyframes sunrise-overlay {
+  from {
+    clip-path: inset(100% 0 0 0 round 9999px);
+  }
+  to {
+    clip-path: inset(0% 0 0 0 round 9999px);
+  }
+}
+
+.animate-sunrise-overlay {
+  animation: sunrise-overlay 1s ease-out forwards;
+}

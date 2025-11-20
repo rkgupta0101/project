@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 type Category = {
   id: string;
@@ -23,6 +26,16 @@ export function HeroCategory({
   onNext,
   isRotating,
 }: HeroCategoryProps) {
+  const [showOverlay, setShowOverlay] = useState(false);
+
+  const handleExploreClick = () => {
+    setShowOverlay(true);
+    setTimeout(() => {
+      setShowOverlay(false);
+      onNext();
+    }, 1000);
+  };
+
   return (
     <section className="relative pt-12 pb-12 md:pt-24 md:pb-24 lg:pt-28 lg:pb-28">
       <div className="pointer-events-none absolute inset-0">
@@ -45,12 +58,20 @@ export function HeroCategory({
                 priority
               />
             </div>
+            {showOverlay && (
+              <div className="absolute inset-[8px] rounded-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#F9627D] via-[#E8447C] to-[#FF9A5A] animate-sunrise-overlay" />
+              </div>
+            )}
           </div>
 
           <span
             className={`pointer-events-none absolute left-1/2 -translate-x-1/2 md:left-4 lg:left-0 md:translate-x-0 top-1/2 -translate-y-1/2 text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[5rem] xl:text-[5.5rem] font-light leading-none tracking-tight text-white ${
-              isRotating ? "animate-rotate-category origin-left" : "origin-left"
+              isRotating
+                ? "animate-rotate-clock-needle origin-left"
+                : "origin-left"
             }`}
+            style={{ transformOrigin: "left center" }}
           >
             {category.label}
           </span>
@@ -65,8 +86,8 @@ export function HeroCategory({
             <p className="text-white font-normal">Categories</p>
           </div>
           <button
-            onClick={onNext}
-            className="inline-flex items-center gap-2 text-sm sm:text-[0.95rem] md:text-base font-normal bg-gradient-to-r from-[#F9627D] to-[#FF9A5A] bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            onClick={handleExploreClick}
+            className="inline-flex items-center gap-2 text-xl sm:text-[0.95rem] md:text-base font-normal bg-gradient-to-r from-[#F9627D] to-[#FF9A5A] bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
             <span>Explore all categories</span>
             <span className="text-base text-transparent bg-gradient-to-r from-[#F9627D] to-[#FF9A5A] bg-clip-text">

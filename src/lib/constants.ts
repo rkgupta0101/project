@@ -106,6 +106,7 @@ export const RECENT_SHOWS = [
     artist: "Featured Artist",
     description: "for an event hosted by XYZ performed at Pune.",
     date: "14 March 2023",
+    imageSrc: SHARED_IMAGES[0],
   },
   {
     id: 2,
@@ -113,5 +114,14 @@ export const RECENT_SHOWS = [
     artist: "Another Artist",
     description: "lit up the stage for a corporate gala in Mumbai.",
     date: "02 April 2023",
+    imageSrc: SHARED_IMAGES[1],
+  },
+  {
+    id: 3,
+    title: "Dance extravaganza",
+    artist: "Dance Crew",
+    description: "brought energy and rhythm to a wedding in Delhi.",
+    date: "20 May 2023",
+    imageSrc: SHARED_IMAGES[2],
   },
 ];
