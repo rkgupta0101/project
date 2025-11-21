@@ -51,7 +51,7 @@ export default function Page() {
 
   return (
     <main className="bg-page-bg text-white min-h-screen overflow-x-hidden">
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-6 md:py-10 space-y-16 md:space-y-32">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8 lg:py-10 space-y-10 sm:space-y-12 md:space-y-20 lg:space-y-32">
         <HeroCategory
           category={currentCategory}
           index={categoryIndex}

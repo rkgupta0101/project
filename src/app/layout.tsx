@@ -11,6 +11,7 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: "StarClinch Experience",
   description: "Landing page inspired by StarClinch Figma prototype",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
 };
 
 export default function RootLayout({
@@ -20,6 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
+        />
+      </head>
       <body className={`bg-page-bg text-white ${caveat.variable}`}>
         {children}
       </body>
